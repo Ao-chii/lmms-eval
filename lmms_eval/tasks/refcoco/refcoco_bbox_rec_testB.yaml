@@ -3,3 +3,6 @@ task: refcoco_bbox_rec_testB
 test_split: testB
 include: _default_template_bbox_rec_yaml
 dataset_path: /mnt/data4T-2/xhj/huggingface_cache/datasets/lmms-lab/RefCOCO
+dataset_kwargs:
+  data_files:
+    testB: "testB-*.parquet"
