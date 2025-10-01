@@ -87,6 +87,23 @@ def refcoco_bbox_rec_process_result(doc, result):
     """
     pred = result[0] if len(result) > 0 else ""
     pred = parse_float_sequence_within(pred)
+    
+    # Check if the predicted coordinates are in pixel format (values > 1)
+    # If so, normalize them using the image dimensions
+    if pred and any(coord > 1 for coord in pred):
+        image_width = doc.get("image_width", 1)
+        image_height = doc.get("image_height", 1)
+        
+        # Normalize pixel coordinates to [0, 1] range
+        # Format: [x1, y1, x2, y2] -> [x1/w, y1/h, x2/w, y2/h]
+        pred = [
+            pred[0] / image_width,
+            pred[1] / image_height,
+            pred[2] / image_width,
+            pred[3] / image_height
+        ]
+        eval_logger.debug(f"Normalized pixel coordinates to: {pred}")
+    
     ann_id = doc["question_id"]
     data_dict = {"answer": doc["answer"], "pred": pred, "ann_id": ann_id, "bbox": doc["bbox"]}
     return {f"refcoco_{metric}": data_dict for metric in COCO_REC_METRICS}

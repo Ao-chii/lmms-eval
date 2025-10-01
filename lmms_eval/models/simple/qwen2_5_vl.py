@@ -103,6 +103,9 @@ class Qwen2_5_VL(lmms):
             self.reasoning_prompt = None
         self.processor = AutoProcessor.from_pretrained(pretrained, max_pixels=max_pixels, min_pixels=min_pixels)
         self._tokenizer = AutoTokenizer.from_pretrained(pretrained)
+        # Set padding_side to left for decoder-only models during generation
+        self._tokenizer.padding_side = "left"
+        self.processor.tokenizer.padding_side = "left"
         self.system_prompt = system_prompt
         self.interleave_visuals = interleave_visuals
 
