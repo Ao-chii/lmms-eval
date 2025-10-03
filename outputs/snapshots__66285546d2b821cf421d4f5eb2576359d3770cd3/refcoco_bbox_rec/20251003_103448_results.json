@@ -1,0 +1,146 @@
+{
+  "results": {
+    "refcocog_bbox_rec_val": {
+      "alias": "refcocog_bbox_rec_val",
+      "refcoco_IoU,none": 0.7244748381871057,
+      "refcoco_IoU_stderr,none": "N/A",
+      "refcoco_ACC@0.1,none": 0.9161585365853658,
+      "refcoco_ACC@0.1_stderr,none": "N/A",
+      "refcoco_ACC@0.3,none": 0.865230044345898,
+      "refcoco_ACC@0.3_stderr,none": "N/A",
+      "refcoco_ACC@0.5,none": 0.79490022172949,
+      "refcoco_ACC@0.5_stderr,none": "N/A",
+      "refcoco_ACC@0.7,none": 0.6958148558758315,
+      "refcoco_ACC@0.7_stderr,none": "N/A",
+      "refcoco_ACC@0.9,none": 0.41449556541019955,
+      "refcoco_ACC@0.9_stderr,none": "N/A",
+      "refcoco_Center_ACC,none": 0.8798503325942351,
+      "refcoco_Center_ACC_stderr,none": "N/A"
+    }
+  },
+  "group_subtasks": {
+    "refcocog_bbox_rec_val": []
+  },
+  "configs": {
+    "refcocog_bbox_rec_val": {
+      "task": "refcocog_bbox_rec_val",
+      "tag": "refcocog_bbox_rec",
+      "group": "refcocog_bbox_rec",
+      "dataset_path": "lmms-lab/RefCOCOg",
+      "test_split": "val",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "process_docs": "<function refcoco_bbox_rec_preprocess_dataset at 0x7f8a64393880>",
+      "doc_to_visual": "<function refcoco_bbox_rec_doc_to_visual at 0x7f8a643ac940>",
+      "doc_to_text": "<function refcoco_bbox_rec_doc_to_text at 0x7f8a643ad6c0>",
+      "doc_to_target": "bbox",
+      "process_results": "<function refcoco_bbox_rec_process_result at 0x7f8a643ae4d0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_IoU",
+          "aggregation": "<function refcoco_bbox_rec_iou at 0x7f8a643af490>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.1",
+          "aggregation": "<function refcoco_bbox_rec_acc01 at 0x7f8a643b8280>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.3",
+          "aggregation": "<function refcoco_bbox_rec_acc03 at 0x7f8a643b9000>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.5",
+          "aggregation": "<function refcoco_bbox_rec_acc05 at 0x7f8a643b9d80>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.7",
+          "aggregation": "<function refcoco_bbox_rec_acc07 at 0x7f8a643bab00>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.9",
+          "aggregation": "<function refcoco_bbox_rec_acc09 at 0x7f8a643bb880>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Center_ACC",
+          "aggregation": "<function refcoco_bbox_rec_center_acc at 0x7f8a643d0670>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    }
+  },
+  "versions": {
+    "refcocog_bbox_rec_val": "0.0"
+  },
+  "n-shot": {
+    "refcocog_bbox_rec_val": 0
+  },
+  "higher_is_better": {
+    "refcocog_bbox_rec_val": {
+      "refcoco_IoU": true,
+      "refcoco_ACC@0.1": true,
+      "refcoco_ACC@0.3": true,
+      "refcoco_ACC@0.5": true,
+      "refcoco_ACC@0.7": true,
+      "refcoco_ACC@0.9": true,
+      "refcoco_Center_ACC": true
+    }
+  },
+  "n-samples": {
+    "refcocog_bbox_rec_val": {
+      "original": 14432,
+      "effective": 14432
+    }
+  },
+  "config": {
+    "model": "qwen2_5_vl_scene_graph",
+    "model_args": "pretrained=/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3,use_unified_inference=True,max_pixels=12845056,attn_implementation=flash_attention_2",
+    "batch_size": "128",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "71df930",
+  "date": "20251003_103448",
+  "task_hashes": {
+    "refcocog_bbox_rec_val": "35204bdb16986b10e6b2c4c1e9553c7fdf46357c5f79947e7c0de296efcab8b8"
+  },
+  "model_source": "qwen2_5_vl_scene_graph",
+  "model_name": "/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "model_name_sanitized": "snapshots__66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 1531590.239318385,
+  "end_time": 1533788.129830252,
+  "total_evaluation_time_seconds": "2197.8905118668918"
+}

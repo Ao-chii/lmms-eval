@@ -1,0 +1,343 @@
+{
+  "results": {
+    "refcoco+_seg_testA": {
+      "alias": "refcoco+_seg_testA",
+      "refcoco_Bleu_4,none": 0.010486344072881295,
+      "refcoco_Bleu_4_stderr,none": "N/A",
+      "refcoco_Bleu_3,none": 0.026302761803601634,
+      "refcoco_Bleu_3_stderr,none": "N/A",
+      "refcoco_Bleu_2,none": 0.07367406045655399,
+      "refcoco_Bleu_2_stderr,none": "N/A",
+      "refcoco_Bleu_1,none": 0.16525808145919088,
+      "refcoco_Bleu_1_stderr,none": "N/A",
+      "refcoco_METEOR,none": 0.14262628450174328,
+      "refcoco_METEOR_stderr,none": "N/A",
+      "refcoco_ROUGE_L,none": 0.20929008751348271,
+      "refcoco_ROUGE_L_stderr,none": "N/A",
+      "refcoco_CIDEr,none": 0.13422297903982378,
+      "refcoco_CIDEr_stderr,none": "N/A"
+    },
+    "refcoco+_seg_testB": {
+      "alias": "refcoco+_seg_testB",
+      "refcoco_Bleu_4,none": 0.012260714042816919,
+      "refcoco_Bleu_4_stderr,none": "N/A",
+      "refcoco_Bleu_3,none": 0.029715219659326452,
+      "refcoco_Bleu_3_stderr,none": "N/A",
+      "refcoco_Bleu_2,none": 0.07250908184210988,
+      "refcoco_Bleu_2_stderr,none": "N/A",
+      "refcoco_Bleu_1,none": 0.17303072449107515,
+      "refcoco_Bleu_1_stderr,none": "N/A",
+      "refcoco_METEOR,none": 0.13328672191195448,
+      "refcoco_METEOR_stderr,none": "N/A",
+      "refcoco_ROUGE_L,none": 0.2174495910866262,
+      "refcoco_ROUGE_L_stderr,none": "N/A",
+      "refcoco_CIDEr,none": 0.26665437281283827,
+      "refcoco_CIDEr_stderr,none": "N/A"
+    },
+    "refcoco+_seg_val": {
+      "alias": "refcoco+_seg_val",
+      "refcoco_Bleu_4,none": 0.012174704003991569,
+      "refcoco_Bleu_4_stderr,none": "N/A",
+      "refcoco_Bleu_3,none": 0.028415529084662213,
+      "refcoco_Bleu_3_stderr,none": "N/A",
+      "refcoco_Bleu_2,none": 0.07618800595529597,
+      "refcoco_Bleu_2_stderr,none": "N/A",
+      "refcoco_Bleu_1,none": 0.17315034843670274,
+      "refcoco_Bleu_1_stderr,none": "N/A",
+      "refcoco_METEOR,none": 0.14117193051498922,
+      "refcoco_METEOR_stderr,none": "N/A",
+      "refcoco_ROUGE_L,none": 0.21934932914901453,
+      "refcoco_ROUGE_L_stderr,none": "N/A",
+      "refcoco_CIDEr,none": 0.2112142407452517,
+      "refcoco_CIDEr_stderr,none": "N/A"
+    }
+  },
+  "group_subtasks": {
+    "refcoco+_seg_testA": [],
+    "refcoco+_seg_testB": [],
+    "refcoco+_seg_val": []
+  },
+  "configs": {
+    "refcoco+_seg_testA": {
+      "task": "refcoco+_seg_testA",
+      "tag": "refcoco+_seg",
+      "group": "refcoco+_seg",
+      "dataset_path": "lmms-lab/RefCOCOplus",
+      "test_split": "testA",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function refcoco_seg_doc_to_visual at 0x7febb819b640>",
+      "doc_to_text": "<function refcoco_doc_to_text at 0x7febb81c8820>",
+      "doc_to_target": "answer",
+      "process_results": "<function refcoco_process_result at 0x7febb81c9120>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_Bleu_4",
+          "aggregation": "<function refcoco_bleu4 at 0x7febb81c9ab0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_3",
+          "aggregation": "<function refcoco_bleu3 at 0x7febb81ca3b0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_2",
+          "aggregation": "<function refcoco_bleu2 at 0x7febb81cacb0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_1",
+          "aggregation": "<function refcoco_bleu1 at 0x7febb81cb5b0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_METEOR",
+          "aggregation": "<function refcoco_meteor at 0x7febb81cbeb0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ROUGE_L",
+          "aggregation": "<function refcoco_rougel at 0x7febb24e0820>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_CIDEr",
+          "aggregation": "<function refcoco_cider at 0x7febb24e1120>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    },
+    "refcoco+_seg_testB": {
+      "task": "refcoco+_seg_testB",
+      "tag": "refcoco+_seg",
+      "group": "refcoco+_seg",
+      "dataset_path": "lmms-lab/RefCOCOplus",
+      "test_split": "testB",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function refcoco_seg_doc_to_visual at 0x7febb24a43a0>",
+      "doc_to_text": "<function refcoco_doc_to_text at 0x7febb24a4ca0>",
+      "doc_to_target": "answer",
+      "process_results": "<function refcoco_process_result at 0x7febb24a55a0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_Bleu_4",
+          "aggregation": "<function refcoco_bleu4 at 0x7febb24a5f30>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_3",
+          "aggregation": "<function refcoco_bleu3 at 0x7febb24a6830>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_2",
+          "aggregation": "<function refcoco_bleu2 at 0x7febb24a7130>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_1",
+          "aggregation": "<function refcoco_bleu1 at 0x7febb24a7a30>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_METEOR",
+          "aggregation": "<function refcoco_meteor at 0x7febb24c83a0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ROUGE_L",
+          "aggregation": "<function refcoco_rougel at 0x7febb24c8ca0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_CIDEr",
+          "aggregation": "<function refcoco_cider at 0x7febb24c95a0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    },
+    "refcoco+_seg_val": {
+      "task": "refcoco+_seg_val",
+      "tag": "refcoco+_seg",
+      "group": "refcoco+_seg",
+      "dataset_path": "lmms-lab/RefCOCOplus",
+      "test_split": "val",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function refcoco_seg_doc_to_visual at 0x7febb24ca950>",
+      "doc_to_text": "<function refcoco_doc_to_text at 0x7febb24ca560>",
+      "doc_to_target": "answer",
+      "process_results": "<function refcoco_process_result at 0x7febb24c9e10>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_Bleu_4",
+          "aggregation": "<function refcoco_bleu4 at 0x7febb24cb5b0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_3",
+          "aggregation": "<function refcoco_bleu3 at 0x7febb24cbeb0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_2",
+          "aggregation": "<function refcoco_bleu2 at 0x7fed31cd0820>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Bleu_1",
+          "aggregation": "<function refcoco_bleu1 at 0x7fed31cd1120>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_METEOR",
+          "aggregation": "<function refcoco_meteor at 0x7fed31cd1a20>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ROUGE_L",
+          "aggregation": "<function refcoco_rougel at 0x7fed31cd2320>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_CIDEr",
+          "aggregation": "<function refcoco_cider at 0x7fed31cd2c20>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    }
+  },
+  "versions": {
+    "refcoco+_seg_testA": "0.0",
+    "refcoco+_seg_testB": "0.0",
+    "refcoco+_seg_val": "0.0"
+  },
+  "n-shot": {
+    "refcoco+_seg_testA": 0,
+    "refcoco+_seg_testB": 0,
+    "refcoco+_seg_val": 0
+  },
+  "higher_is_better": {
+    "refcoco+_seg_testA": {
+      "refcoco_Bleu_4": true,
+      "refcoco_Bleu_3": true,
+      "refcoco_Bleu_2": true,
+      "refcoco_Bleu_1": true,
+      "refcoco_METEOR": true,
+      "refcoco_ROUGE_L": true,
+      "refcoco_CIDEr": true
+    },
+    "refcoco+_seg_testB": {
+      "refcoco_Bleu_4": true,
+      "refcoco_Bleu_3": true,
+      "refcoco_Bleu_2": true,
+      "refcoco_Bleu_1": true,
+      "refcoco_METEOR": true,
+      "refcoco_ROUGE_L": true,
+      "refcoco_CIDEr": true
+    },
+    "refcoco+_seg_val": {
+      "refcoco_Bleu_4": true,
+      "refcoco_Bleu_3": true,
+      "refcoco_Bleu_2": true,
+      "refcoco_Bleu_1": true,
+      "refcoco_METEOR": true,
+      "refcoco_ROUGE_L": true,
+      "refcoco_CIDEr": true
+    }
+  },
+  "n-samples": {
+    "refcoco+_seg_val": {
+      "original": 3805,
+      "effective": 3805
+    },
+    "refcoco+_seg_testB": {
+      "original": 1798,
+      "effective": 1798
+    },
+    "refcoco+_seg_testA": {
+      "original": 1975,
+      "effective": 1975
+    }
+  },
+  "config": {
+    "model": "qwen2_5_vl",
+    "model_args": "pretrained=/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3,max_pixels=12845056,attn_implementation=flash_attention_2",
+    "batch_size": "128",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "71df930",
+  "date": "20251003_131647",
+  "task_hashes": {
+    "refcoco+_seg_val": "f8dd01bfea9cb8a74af1e081df6dd50fdc838c383e40fb61fa98ac03395b1cba",
+    "refcoco+_seg_testB": "f72f81624640c7c3b06aa7dc7f7030ea8b05f1bd6b0d71819f5e122325f3fee9",
+    "refcoco+_seg_testA": "afcf62054fd3760c0ef48a6b31ca1698e6502b239ec385f6794442d64383cb83"
+  },
+  "model_source": "qwen2_5_vl",
+  "model_name": "/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "model_name_sanitized": "snapshots__66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 1541309.245488586,
+  "end_time": 1542325.471075778,
+  "total_evaluation_time_seconds": "1016.2255871919915"
+}

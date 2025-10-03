@@ -1,0 +1,361 @@
+{
+  "results": {
+    "refcoco_bbox_rec_testA": {
+      "alias": "refcoco_bbox_rec_testA",
+      "refcoco_IoU,none": 0.7894011416175589,
+      "refcoco_IoU_stderr,none": "N/A",
+      "refcoco_ACC@0.1,none": 0.9512108891638678,
+      "refcoco_ACC@0.1_stderr,none": "N/A",
+      "refcoco_ACC@0.3,none": 0.9185080431324023,
+      "refcoco_ACC@0.3_stderr,none": "N/A",
+      "refcoco_ACC@0.5,none": 0.876789817924695,
+      "refcoco_ACC@0.5_stderr,none": "N/A",
+      "refcoco_ACC@0.7,none": 0.7907017853986211,
+      "refcoco_ACC@0.7_stderr,none": "N/A",
+      "refcoco_ACC@0.9,none": 0.4976135761004066,
+      "refcoco_ACC@0.9_stderr,none": "N/A",
+      "refcoco_Center_ACC,none": 0.9388368393141241,
+      "refcoco_Center_ACC_stderr,none": "N/A"
+    },
+    "refcoco_bbox_rec_testB": {
+      "alias": "refcoco_bbox_rec_testB",
+      "refcoco_IoU,none": 0.7264981653184002,
+      "refcoco_IoU_stderr,none": "N/A",
+      "refcoco_ACC@0.1,none": 0.9271835132482826,
+      "refcoco_ACC@0.1_stderr,none": "N/A",
+      "refcoco_ACC@0.3,none": 0.8737978410206084,
+      "refcoco_ACC@0.3_stderr,none": "N/A",
+      "refcoco_ACC@0.5,none": 0.8041216879293425,
+      "refcoco_ACC@0.5_stderr,none": "N/A",
+      "refcoco_ACC@0.7,none": 0.6889106967615309,
+      "refcoco_ACC@0.7_stderr,none": "N/A",
+      "refcoco_ACC@0.9,none": 0.4,
+      "refcoco_ACC@0.9_stderr,none": "N/A",
+      "refcoco_Center_ACC,none": 0.8955839057899901,
+      "refcoco_Center_ACC_stderr,none": "N/A"
+    },
+    "refcoco_bbox_rec_val": {
+      "alias": "refcoco_bbox_rec_val",
+      "refcoco_IoU,none": 0.7684117002783094,
+      "refcoco_IoU_stderr,none": "N/A",
+      "refcoco_ACC@0.1,none": 0.940829346092504,
+      "refcoco_ACC@0.1_stderr,none": "N/A",
+      "refcoco_ACC@0.3,none": 0.9017543859649123,
+      "refcoco_ACC@0.3_stderr,none": "N/A",
+      "refcoco_ACC@0.5,none": 0.8523125996810207,
+      "refcoco_ACC@0.5_stderr,none": "N/A",
+      "refcoco_ACC@0.7,none": 0.7580143540669857,
+      "refcoco_ACC@0.7_stderr,none": "N/A",
+      "refcoco_ACC@0.9,none": 0.46626794258373205,
+      "refcoco_ACC@0.9_stderr,none": "N/A",
+      "refcoco_Center_ACC,none": 0.9206539074960127,
+      "refcoco_Center_ACC_stderr,none": "N/A"
+    }
+  },
+  "group_subtasks": {
+    "refcoco_bbox_rec_testA": [],
+    "refcoco_bbox_rec_testB": [],
+    "refcoco_bbox_rec_val": []
+  },
+  "configs": {
+    "refcoco_bbox_rec_testA": {
+      "task": "refcoco_bbox_rec_testA",
+      "tag": "refcoco_bbox_rec",
+      "group": "refcoco_bbox_rec",
+      "dataset_path": "/mnt/data4T-2/xhj/huggingface_cache/datasets/lmms-lab/RefCOCO",
+      "dataset_kwargs": {
+        "data_files": {
+          "testA": "testA-*.parquet"
+        }
+      },
+      "test_split": "testA",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "process_docs": "<function refcoco_bbox_rec_preprocess_dataset at 0x7f74d04c3ac0>",
+      "doc_to_visual": "<function refcoco_bbox_rec_doc_to_visual at 0x7f74d04d8b80>",
+      "doc_to_text": "<function refcoco_bbox_rec_doc_to_text at 0x7f74d04d9900>",
+      "doc_to_target": "bbox",
+      "process_results": "<function refcoco_bbox_rec_process_result at 0x7f74d04da710>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_IoU",
+          "aggregation": "<function refcoco_bbox_rec_iou at 0x7f74d04db6d0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.1",
+          "aggregation": "<function refcoco_bbox_rec_acc01 at 0x7f74d04ec4c0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.3",
+          "aggregation": "<function refcoco_bbox_rec_acc03 at 0x7f74d04ed240>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.5",
+          "aggregation": "<function refcoco_bbox_rec_acc05 at 0x7f74d04edfc0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.7",
+          "aggregation": "<function refcoco_bbox_rec_acc07 at 0x7f74d04eed40>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.9",
+          "aggregation": "<function refcoco_bbox_rec_acc09 at 0x7f74d04efac0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Center_ACC",
+          "aggregation": "<function refcoco_bbox_rec_center_acc at 0x7f74d05008b0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    },
+    "refcoco_bbox_rec_testB": {
+      "task": "refcoco_bbox_rec_testB",
+      "tag": "refcoco_bbox_rec",
+      "group": "refcoco_bbox_rec",
+      "dataset_path": "/mnt/data4T-2/xhj/huggingface_cache/datasets/lmms-lab/RefCOCO",
+      "dataset_kwargs": {
+        "data_files": {
+          "testB": "testB-*.parquet"
+        }
+      },
+      "test_split": "testB",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "process_docs": "<function refcoco_bbox_rec_preprocess_dataset at 0x7f74d03d03a0>",
+      "doc_to_visual": "<function refcoco_bbox_rec_doc_to_visual at 0x7f74b5bc8280>",
+      "doc_to_text": "<function refcoco_bbox_rec_doc_to_text at 0x7f74b5bc9090>",
+      "doc_to_target": "bbox",
+      "process_results": "<function refcoco_bbox_rec_process_result at 0x7f74b5bc9ea0>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_IoU",
+          "aggregation": "<function refcoco_bbox_rec_iou at 0x7f74b5bcae60>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.1",
+          "aggregation": "<function refcoco_bbox_rec_acc01 at 0x7f74b5bcb7f0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.3",
+          "aggregation": "<function refcoco_bbox_rec_acc03 at 0x7f74b5195a20>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.5",
+          "aggregation": "<function refcoco_bbox_rec_acc05 at 0x7f74b5194a60>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.7",
+          "aggregation": "<function refcoco_bbox_rec_acc07 at 0x7f74b51960e0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.9",
+          "aggregation": "<function refcoco_bbox_rec_acc09 at 0x7f74b5196e60>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Center_ACC",
+          "aggregation": "<function refcoco_bbox_rec_center_acc at 0x7f74b5197be0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    },
+    "refcoco_bbox_rec_val": {
+      "task": "refcoco_bbox_rec_val",
+      "tag": "refcoco_bbox_rec",
+      "group": "refcoco_bbox_rec",
+      "dataset_path": "/mnt/data4T-2/xhj/huggingface_cache/datasets/lmms-lab/RefCOCO",
+      "dataset_kwargs": {
+        "data_files": {
+          "val": "val-*.parquet"
+        }
+      },
+      "test_split": "val",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "process_docs": "<function refcoco_bbox_rec_preprocess_dataset at 0x7f74b623caf0>",
+      "doc_to_visual": "<function refcoco_bbox_rec_doc_to_visual at 0x7f74b623d510>",
+      "doc_to_text": "<function refcoco_bbox_rec_doc_to_text at 0x7f74b623e440>",
+      "doc_to_target": "bbox",
+      "process_results": "<function refcoco_bbox_rec_process_result at 0x7f74b623f250>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "refcoco_IoU",
+          "aggregation": "<function refcoco_bbox_rec_iou at 0x7f74b623c5e0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.1",
+          "aggregation": "<function refcoco_bbox_rec_acc01 at 0x7f74b5520310>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.3",
+          "aggregation": "<function refcoco_bbox_rec_acc03 at 0x7f74b5521870>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.5",
+          "aggregation": "<function refcoco_bbox_rec_acc05 at 0x7f74b55225f0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.7",
+          "aggregation": "<function refcoco_bbox_rec_acc07 at 0x7f74b5523370>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_ACC@0.9",
+          "aggregation": "<function refcoco_bbox_rec_acc09 at 0x7f74b61e8160>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "refcoco_Center_ACC",
+          "aggregation": "<function refcoco_bbox_rec_center_acc at 0x7f74b61e8ee0>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ]
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": "0.0"
+      }
+    }
+  },
+  "versions": {
+    "refcoco_bbox_rec_testA": "0.0",
+    "refcoco_bbox_rec_testB": "0.0",
+    "refcoco_bbox_rec_val": "0.0"
+  },
+  "n-shot": {
+    "refcoco_bbox_rec_testA": 0,
+    "refcoco_bbox_rec_testB": 0,
+    "refcoco_bbox_rec_val": 0
+  },
+  "higher_is_better": {
+    "refcoco_bbox_rec_testA": {
+      "refcoco_IoU": true,
+      "refcoco_ACC@0.1": true,
+      "refcoco_ACC@0.3": true,
+      "refcoco_ACC@0.5": true,
+      "refcoco_ACC@0.7": true,
+      "refcoco_ACC@0.9": true,
+      "refcoco_Center_ACC": true
+    },
+    "refcoco_bbox_rec_testB": {
+      "refcoco_IoU": true,
+      "refcoco_ACC@0.1": true,
+      "refcoco_ACC@0.3": true,
+      "refcoco_ACC@0.5": true,
+      "refcoco_ACC@0.7": true,
+      "refcoco_ACC@0.9": true,
+      "refcoco_Center_ACC": true
+    },
+    "refcoco_bbox_rec_val": {
+      "refcoco_IoU": true,
+      "refcoco_ACC@0.1": true,
+      "refcoco_ACC@0.3": true,
+      "refcoco_ACC@0.5": true,
+      "refcoco_ACC@0.7": true,
+      "refcoco_ACC@0.9": true,
+      "refcoco_Center_ACC": true
+    }
+  },
+  "n-samples": {
+    "refcoco_bbox_rec_val": {
+      "original": 25080,
+      "effective": 25080
+    },
+    "refcoco_bbox_rec_testB": {
+      "original": 5095,
+      "effective": 5095
+    },
+    "refcoco_bbox_rec_testA": {
+      "original": 5657,
+      "effective": 5657
+    }
+  },
+  "config": {
+    "model": "qwen2_5_vl",
+    "model_args": "pretrained=/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3,max_pixels=12845056,attn_implementation=flash_attention_2",
+    "batch_size": "128",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "dedd1b7",
+  "date": "20251001_135556",
+  "task_hashes": {
+    "refcoco_bbox_rec_val": "ba73523dbf4d13b8da91fac5867a76b8ba73da0a5c671449589fcd25ded4381e",
+    "refcoco_bbox_rec_testB": "d5f102a18e4cfb7c1fa8d057d74ee146477e445ee19902246d812b4a66cea753",
+    "refcoco_bbox_rec_testA": "30457d16ebaeeaf034ae20f4d869a43c7fd0badde455f903d18fb94585cc6049"
+  },
+  "model_source": "qwen2_5_vl",
+  "model_name": "/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "model_name_sanitized": "snapshots__66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 1370857.638717779,
+  "end_time": 1376130.871826501,
+  "total_evaluation_time_seconds": "5273.233108722139"
+}

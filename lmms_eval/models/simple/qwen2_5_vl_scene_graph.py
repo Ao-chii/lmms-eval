@@ -421,9 +421,7 @@ class Qwen2_5_VL_SceneGraph(Qwen2_5_VL):
             contexts, all_gen_kwargs, doc_to_visual, doc_id, task, split = zip(*chunk)
             task = task[0]
             split = split[0]
-            visual_list = [
-                doc_to_visual[0](self.task_dict[task][split][ids]) for ids in doc_id
-            ]
+            visual_list = [doc_to_visual[0](self.task_dict[task][split][ids]) for ids in doc_id]
             gen_kwargs = all_gen_kwargs[0]
 
             # Setup until conditions
