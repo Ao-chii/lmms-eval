@@ -50,3 +50,4 @@ uv.lock
 workspace/*
 .claude/*
 remote_code/*
+lmms_eval/tasks/ocrbench_v2/spotting_eval/*

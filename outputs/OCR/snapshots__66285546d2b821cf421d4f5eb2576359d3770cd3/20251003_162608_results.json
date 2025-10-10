@@ -1,0 +1,142 @@
+{
+  "results": {
+    "seedbench_2_plus": {
+      "alias": "seedbench_2_plus",
+      "seedbench_2_plus_Chart,none": 0.6432098765432098,
+      "seedbench_2_plus_Chart_stderr,none": "N/A",
+      "seedbench_2_plus_all,none": 0.6758893280632411,
+      "seedbench_2_plus_all_stderr,none": "N/A",
+      "seedbench_2_plus_Web,none": 0.8287878787878787,
+      "seedbench_2_plus_Web_stderr,none": "N/A",
+      "seedbench_2_plus_Map,none": 0.5836431226765799,
+      "seedbench_2_plus_Map_stderr,none": "N/A"
+    }
+  },
+  "group_subtasks": {
+    "seedbench_2_plus": []
+  },
+  "configs": {
+    "seedbench_2_plus": {
+      "task": "seedbench_2_plus",
+      "dataset_path": "doolayer/SEED-Bench-2-Plus",
+      "dataset_kwargs": {
+        "token": true
+      },
+      "test_split": "test",
+      "full_docs": false,
+      "process_results_use_image": false,
+      "doc_to_visual": "<function seed_doc_to_visual at 0x7fe6321e3a30>",
+      "doc_to_text": "<function seed_doc_to_text at 0x7fe6321e3f40>",
+      "doc_to_target": "answer",
+      "process_results": "<function seed_process_result at 0x7fe6321f8430>",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "seedbench_2_plus_Chart",
+          "aggregation": "<function seed_aggregation_result at 0x7fe6321f88b0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "seedbench_2_plus_Map",
+          "aggregation": "<function seed_aggregation_result at 0x7fe6321f8ca0>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "seedbench_2_plus_Web",
+          "aggregation": "<function seed_aggregation_result at 0x7fe6321f9090>",
+          "higher_is_better": true
+        },
+        {
+          "metric": "seedbench_2_plus_all",
+          "aggregation": "<function seed_aggregation_result at 0x7fe6321f9480>",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [
+          "ASSISTANT:"
+        ],
+        "max_new_tokens": 16,
+        "image_aspect_ratio": "original"
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": [
+        {
+          "version": 0.0
+        }
+      ],
+      "lmms_eval_specific_kwargs": {
+        "llava": {
+          "img_token": "<image>",
+          "post_prompt": "Answer with the option's letter from the given choices directly."
+        },
+        "gpt4V": {
+          "img_token": "<image>",
+          "post_prompt": "Answer with the option's letter from the given choices directly."
+        },
+        "default": {
+          "img_token": "<image>",
+          "post_prompt": "Answer with the option's letter from the given choices directly."
+        },
+        "img_token": "<image>",
+        "post_prompt": "Answer with the option's letter from the given choices directly."
+      }
+    }
+  },
+  "versions": {
+    "seedbench_2_plus": "Yaml"
+  },
+  "n-shot": {
+    "seedbench_2_plus": 0
+  },
+  "higher_is_better": {
+    "seedbench_2_plus": {
+      "seedbench_2_plus_Chart": true,
+      "seedbench_2_plus_Map": true,
+      "seedbench_2_plus_Web": true,
+      "seedbench_2_plus_all": true
+    }
+  },
+  "n-samples": {
+    "seedbench_2_plus": {
+      "original": 2277,
+      "effective": 2277
+    }
+  },
+  "config": {
+    "model": "qwen2_5_vl",
+    "model_args": "pretrained=/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3,max_pixels=12845056,attn_implementation=flash_attention_2",
+    "batch_size": "64",
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": "",
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "9b3f8d8",
+  "date": "20251003_162608",
+  "task_hashes": {
+    "seedbench_2_plus": "e4bd9176c2d913977f0c0504d4ccf0359ea0528920696d48cd0cdf521a3e18d0"
+  },
+  "model_source": "qwen2_5_vl",
+  "model_name": "/mnt/data4T-2/xhj/huggingface_cache/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "model_name_sanitized": "snapshots__66285546d2b821cf421d4f5eb2576359d3770cd3",
+  "system_instruction": null,
+  "system_instruction_sha": null,
+  "fewshot_as_multiturn": false,
+  "chat_template": null,
+  "chat_template_sha": null,
+  "start_time": 1552669.650342548,
+  "end_time": 1553217.518588038,
+  "total_evaluation_time_seconds": "547.8682454898953"
+}

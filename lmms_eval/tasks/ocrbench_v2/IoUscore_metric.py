@@ -37,11 +37,19 @@ def vqa_with_position_evaluation(predict, img_metas):
         score_content = vqa_evaluation(predict["answer"], img_metas["answers"])
     if "bbox" in predict.keys():
         gt_bbox = img_metas["bbox"]
-        try:
-            predict_bbox_list = ast.literal_eval(predict["bbox"])
-            score_bbox = calculate_iou(predict_bbox_list, gt_bbox)
-        except:
-            score_bbox = 0
+        # Convert gt_bbox from string to list if needed
+        if isinstance(gt_bbox, str):
+            try:
+                gt_bbox = ast.literal_eval(gt_bbox)
+            except:
+                gt_bbox = None
+
+        if gt_bbox is not None:
+            try:
+                predict_bbox_list = ast.literal_eval(predict["bbox"]) if isinstance(predict["bbox"], str) else predict["bbox"]
+                score_bbox = calculate_iou(predict_bbox_list, gt_bbox)
+            except:
+                score_bbox = 0
     return 0.5 * score_content + 0.5 * score_bbox
 
 

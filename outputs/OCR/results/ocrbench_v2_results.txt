@@ -1,0 +1,51 @@
+######################### OCRBench v2 ##########################
+################## All Question Types Scores ###################
+APP agent en (sample number: 300): 0.75
+ASCII art classification en (sample number: 200): 0.36
+VQA with position en (sample number: 300): 0.27
+chart parsing en (sample number: 400): 0.17
+cognition VQA cn (sample number: 200): 0.52
+cognition VQA en (sample number: 800): 0.67
+diagram QA en (sample number: 300): 0.80
+document classification en (sample number: 200): 0.61
+document parsing cn (sample number: 300): 0.31
+document parsing en (sample number: 400): 0.33
+fine-grained text recognition en (sample number: 200): 0.28
+formula recognition cn (sample number: 200): 0.04
+formula recognition en (sample number: 400): 0.07
+full-page OCR cn (sample number: 200): 0.41
+full-page OCR en (sample number: 200): 0.41
+handwritten answer extraction cn (sample number: 200): 0.69
+key information extraction cn (sample number: 400): 0.53
+key information extraction en (sample number: 400): 0.74
+key information mapping en (sample number: 300): 0.74
+math QA en (sample number: 300): 0.28
+reasoning VQA cn (sample number: 400): 0.50
+reasoning VQA en (sample number: 600): 0.40
+science QA en (sample number: 300): 0.56
+table parsing cn (sample number: 300): 0.18
+table parsing en (sample number: 400): 0.22
+text counting en (sample number: 200): 0.38
+text grounding en (sample number: 200): 0.01
+text recognition en (sample number: 800): 0.66
+text spotting en (sample number: 200): 0.01
+text translation cn (sample number: 400): 0.16
+######################### English Subsets ######################
+Text Recognition En (Total 1200): 0.55
+Text Detection En (Total 500): 0.17
+Text Spotting En (Total 200): 0.01
+Relationship Extraction En (Total 700): 0.74
+Element Parsing En (Total 1600): 0.20
+Mathematical Calculation En (Total 500): 0.32
+Visual Text Understanding En (Total 1300): 0.69
+Knowledge Reasoning En (Total 1400): 0.50
+Overall English Score: 0.40
+######################### Chinese Subsets ######################
+Text Recognition Cn (Total 200): 0.41
+Relationship Extraction Cn (Total 600): 0.58
+Element Parsing Cn (Total 800): 0.19
+Visual Text Understanding Cn (Total 200): 0.52
+Knowledge Reasoning Cn (Total 800): 0.33
+Overall Chinese Score: 0.41
+######################### Final Score ##########################
+Final Score (Total 10000): 0.40
